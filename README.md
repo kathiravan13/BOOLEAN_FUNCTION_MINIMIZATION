@@ -1,12 +1,6 @@
-
 # BOOLEAN_FUNCTION_MINIMIZATION
-```
-Developed by: kathiravan
 
-RegisterNumber: 212222230063
-```
-
-**AIM:**
+*AIM:*
 
 To implement the given logic function verify its operation in Quartus using Verilog programming.
 
@@ -14,17 +8,17 @@ F1= A’B’C’D’+AC’D’+B’CD’+A’BCD+BC’D
 
 F2=xy’z+x’y’z+w’xy+wx’y+wxy
 
-**Equipment Required:**
+*Equipment Required:*
 
 Hardware – PCs, Cyclone II , USB flasher
 
-**Software – Quartus prime**
+*Software – Quartus prime*
 
-**Theory**
+*Theory*
 
-**Logic Diagram**
+*Logic Diagram*
 
-**Procedure**
+*Procedure*
 
 1.	Type the program in Quartus software.
 
@@ -37,47 +31,47 @@ Hardware – PCs, Cyclone II , USB flasher
 5.	For different input combinations generate the timing diagram.
 
 
-**Program:**
+## Program:
 
-Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
+/* Program to implement the given logic function and to verify its operations in quartus using Verilog programming. 
 
-```
-module Boolean_min(A,B,C,D,W,X,Y,Z,F1,F2);
-input A,B,C,D,W,X,Y,Z;
-wire x1,x2,x3,x4,x5,x6,x7,x8,x9,x10;
-output F1,F2;
-assign x1=(~A)&(~B)&(~C)&(~D);
-assign x2=(A)&(~C)&(~D);
-assign x3=(~B)&(C)&(~D);
-assign x4=(~A)&(B)&(C)&(D);
-assign x5=(B)&(~C)&(D);
-assign x6=(X)&(~Y)&(Z);
-assign x7=(~X)&(~Y)&(Z);
-assign x8=(~W)&(X)&(Y);
-assign x9=(W)&(~X)&(Y);
-assign x10=(W)&(X)&(Y);
-assign F1=x1|x2|x3|x4|x5;
-assign F2=x6|x7|x8|x9|x10;
+Developed by: kathiravan
+
+RegisterNumber: 212222230063
+
+*/
+
+
+module boolean_fun(a,b,c,d,w,x,y,z,f1,f2);
+input a,b,c,d,w,x,y,z;
+output f1,f2;
+wire adash,bdash,cdash,ddash,ydash,p,q,r,s,t,u,v,w1,w2,x1,x2,y1,y2,z1,z2;
+not(adash,a);
+not(bdash,b);
+not(cdash,c);
+not(ddash,d);
+not(ydash,y);
+and(p,bdash,ddash);
+and(q,adash,b,d);
+and(r,a,b,cdash);
+or(f1,p,q,r);
+
+and(w1,a,b,c);
+and(w2,~a,~b,~c);
+or(f2,w1,w2);
 endmodule
 
-```
-## Logic symbol & Truthtable:
-![image](https://github.com/23004205/BOOLEAN_FUNCTION_MINIMIZATION/assets/138971114/a9ccb75e-db7b-490e-8b69-10f820e6bff4)
-
-![image](https://github.com/23004205/BOOLEAN_FUNCTION_MINIMIZATION/assets/138971114/6835b6c0-9fe5-4f55-8288-53b7d0c42104)
 
 
+## RTL realization:
+
+*Output:*
+![313560946-5de811ea-88d2-4110-9c32-1500f1af436c](https://github.com/Keerthi-Vasan-Adhithan/BOOLEAN_FUNCTION_MINIMIZATION/assets/107488929/348cd21b-bcc4-4d44-a425-f64f9fb056ae)
 
 
-**RTL realization**
-
-![image](https://github.com/23004205/BOOLEAN_FUNCTION_MINIMIZATION/assets/138971114/5ffd7097-c99c-4ef3-a82d-0108e72a8b9e)
+![313560653-408a4deb-3ddb-4789-9b64-aa5445cd7992](https://github.com/Keerthi-Vasan-Adhithan/BOOLEAN_FUNCTION_MINIMIZATION/assets/107488929/78f443f6-f744-4a6a-8f8f-50a14e716ee9)
 
 
-**Output:**
-![image](https://github.com/23004205/BOOLEAN_FUNCTION_MINIMIZATION/assets/138971114/3294f442-723b-4550-ab9c-49ed60325deb)
+*Result:*
 
-**Result:**
-
-Thus the given logic functions are implemented using and their operations are verified using Verilog programming.
-
+Thus the given logic functions are implemented using and their operations are verified using Verilog programming
