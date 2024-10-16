@@ -38,7 +38,7 @@ Hardware – PCs, Cyclone II , USB flasher
 Developed by: kathiravan
 
 RegisterNumber: 212222230063
-
+```
 */
 
 
@@ -60,6 +60,8 @@ and(w1,a,b,c);
 and(w2,~a,~b,~c);
 or(f2,w1,w2);
 endmodule
+
+```
 
 
 
